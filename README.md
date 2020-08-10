@@ -1,6 +1,6 @@
 # FirstRust
 
-The page will prompt for n, in order to benchmark fib(n) in JavaScript and Rust+Wasm.
+Clicking the gears button in middle of page will prompt for n, in order to benchmark fibonacci(n) in JavaScript and Rust+Wasm.
 
 WARNING: n >= 45 will take several minutes to calculate.
 
