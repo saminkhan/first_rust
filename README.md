@@ -4,11 +4,11 @@ The page will prompt for n, in order to benchmark fib(n) in JavaScript and Rust+
 
 WARNING: n >= 45 will take several minutes to calculate.
 
-## Requirements (Linux):
+## Requirements (for Linux):
 
 [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html), [npm](https://www.npmjs.com/get-npm), and [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/) must be installed.
 
-## Addition requirements for Windows:
+## Additional requirements for Windows:
 
 [git bash](https://gitforwindows.org/) must be installed.
 
