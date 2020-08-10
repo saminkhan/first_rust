@@ -5,17 +5,13 @@
     "main": "frontend/index.js",
     "scripts": {
         "prebuild": "npm i -f --no-package-lock --no-shrinkwrap",
-        "build": "webpack --config webpack.$ENV.js",
+        "build": "webpack -p --config webpack.prod.js",
         "clean": "bash clean.sh",
         "predev": "npm run prebuild",
-        "dev": "webpack --progress -d -w --config webpack.dev.js",
-        "predeploy": "ENV=prod npm run build",
+        "dev": "webpack -d -w --progress --config webpack.dev.js & npm start",
+        "predeploy": "npm run build",
         "deploy": "gh-pages -d dist",
-        "install": "npip install -r requirements.txt",
-        "prepkg": "npm run build; rm -rf pkg; npm run venv",
-        "pkg": "bash setup.sh",
-        "start": "nopy run.py -e \"$ENV\"",
-        "venv": "nopy -m venv --copies pkg/py_venv"
+        "start": "cd dist; wasm-server"
     },
     "repository": {
         "type": "git",
@@ -53,10 +49,9 @@
         "gh-pages": "^3.1.0",
         "html-webpack-plugin": "^3.2.0",
         "mini-css-extract-plugin": "^0.9.0",
-        "nopy": "^0.2.7",
         "optimize-css-assets-webpack-plugin": "^5.0.3",
         "url-loader": "^3.0.0",
-        "wasm-pack": "^0.9.1",
+        "wasm-server": "^0.0.4",
         "webpack": "^4.42.0",
         "webpack-cli": "^3.3.11",
         "webpack-livereload-plugin": "^2.3.0",
@@ -70,8 +65,5 @@
         "pure-css-loader": "^3.3.3",
         "react": "^16.13.0",
         "react-dom": "^16.13.0"
-    },
-    "python": {
-        "execPath": "python3"
     }
 }

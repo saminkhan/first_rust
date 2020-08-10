@@ -98,9 +98,9 @@ module.exports = {
             },
         }),
         new WasmPackPlugin({
-            crateDirectory: path.resolve(__dirname, 'frontend/rust'),
+            crateDirectory: path.resolve(__dirname, 'frontend', 'rust'),
             extraArgs: '--no-typescript',
-            outDir: path.resolve(__dirname, 'frontend/pkg'),
+            outDir: path.resolve(__dirname, 'frontend', 'pkg'),
         }),
         new FaviconHashPlugin(),
     ],

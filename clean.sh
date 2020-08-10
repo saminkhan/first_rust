@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-rm -rf browser_data dist pkg *_modules *lock* *.log*
-
-pushd backend
-rm -rf __pycache__
-popd
+rm -rf browser_data dist *_modules *lock* *.log*
 
 pushd frontend
 rm -rf pkg

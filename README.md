@@ -1,17 +1,32 @@
 # FirstRust
 
-Requirements:
-
-cargo, npm, and python3 must be installed.
-
-To build and launch the FirstRust app locally:
-
-1. ENV=prod npm run pkg
-2. cd pkg
-3. ./run.py
-
-Use a competent browser to navigate to the ip:port address indicated.
-By default, a tab-less Chrome window will attempt to launch.
 The page will prompt for n, in order to benchmark fib(n) in JavaScript and Rust+Wasm.
 
 WARNING: n >= 45 will take several minutes to calculate.
+
+## Requirements (Linux):
+
+[cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html), [npm](https://www.npmjs.com/get-npm), and [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/) must be installed.
+
+## Addition requirements for Windows:
+
+[git bash](https://gitforwindows.org/) must be installed.
+
+## Production mode:
+
+```bash
+npm run build
+npm start
+```
+
+## Development mode:
+
+```bash
+npm run dev
+```
+
+## Notes:
+
+1. access the app by navigating to http://127.0.0.1:3000 with a WASM-compatible browser (ie. not IE)
+2. dev mode is slower and less-compact than release build, but enables live-reloading upon code changes and browser-side debugging
+3. be sure to use a git bash terminal when working in Windows (cmd, PS, and wsl cause too much pain)
