@@ -3,8 +3,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 html,
-body,
-#root {
+body {
     cursor: default;
     overflow: hidden;
     width: 100%;
@@ -13,7 +12,7 @@ body,
     text-align: center;
 }
 
-#root > div {
+body > div {
     display: flex;
     align-items: center;
     justify-content: center;

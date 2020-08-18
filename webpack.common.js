@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconHashPlugin = require('favicon-hash-webpack-plugin');
@@ -14,25 +13,6 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.jsx?$/,
-                exclude: /[\\/]node_modules[\\/]/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env', '@babel/preset-react'],
-                        plugins: [
-                            '@babel/plugin-proposal-class-properties',
-                            [
-                                '@babel/plugin-transform-runtime',
-                                {
-                                    regenerator: true,
-                                },
-                            ],
-                        ],
-                    },
-                },
-            },
             {
                 test: /\.css$/,
                 use: [
@@ -75,16 +55,6 @@ module.exports = {
         new CleanWebpackPlugin({
             cleanStaleWebpackAssets: false,
         }),
-        new webpack.ProvidePlugin({
-            _: 'lodash',
-            $: 'jquery',
-            jquery: 'jquery',
-            jQuery: 'jquery',
-            localforage: 'localforage',
-            'window.jQuery': 'jquery',
-            React: 'react',
-            ReactDOM: 'react-dom',
-        }),
         new MiniCssExtractPlugin({
             filename: '[name].[contentHash].css',
         }),
@@ -98,7 +68,7 @@ module.exports = {
             },
         }),
         new WasmPackPlugin({
-            crateDirectory: path.resolve(__dirname, 'frontend', 'rust'),
+            crateDirectory: path.resolve(__dirname, 'frontend'),
             extraArgs: '--no-typescript',
             outDir: path.resolve(__dirname, 'frontend', 'pkg'),
         }),

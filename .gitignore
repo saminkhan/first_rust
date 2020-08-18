@@ -3,7 +3,6 @@
 
 *.log*
 
-browser_data
 dist
 pkg
 target
